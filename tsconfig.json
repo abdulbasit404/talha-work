@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/Cards/Page.tsx", "app/Find_Jobs/Page.tsx", "app/Components/Cards/Page.tsx"  ],
   "exclude": ["node_modules"]
 }
