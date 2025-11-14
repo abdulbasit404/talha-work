@@ -5,6 +5,10 @@
   --foreground: #171717;
 }
 
+body {
+  color: #000000; /* default black font */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
