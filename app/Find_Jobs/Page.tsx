@@ -11,7 +11,7 @@ function Page() {
   return (
     <div className="min-h-screen bg-gray-100 lg:flex sm:px-5 sm:py-3 sm:gap-1 ">
       <div className="p-2 flex flex-col gap-2 lg:w-130">
-        <div className="bg-white h-75 rounded-md relative overflow-hidden ">
+        <div className="bg-white h-75 lg:h-120 rounded-md relative overflow-hidden ">
           <div className=" absolute w-full h-32 rounded-md">
             <Image
               src="/profileimagecover.png"
@@ -39,20 +39,20 @@ function Page() {
         <div className="bg-white p-5 rounded-md">
           <div className="flex justify-between">
             <h1>Profile Visitor</h1>
-            <span className="text-blue-800">140</span>
+            <span className="text-blue-500">140</span>
           </div>
           <hr className="text-gray-300 mt-1 mb-1" />
           <div className="flex justify-between">
             <h1>Resume Viewers</h1>
-            <span className="text-blue-800">20</span>
+            <span className="text-blue-500">20</span>
           </div>
           <hr className="text-gray-300 mb-1 mt-1" />
           <div className="flex justify-between">
             <h1>My Jobs</h1>
-            <span className="text-blue-800">88</span>
+            <span className="text-blue-500">88</span>
           </div>
         </div>
-        <div className="bg-white rounded-md h-full ">
+        <div className=" bg-white rounded-md pb-2 h-full">
           <div className="flex justify-between items-center py-2 px-3">
             <div>
               <h1 className="font-bold sm:text-lg">My calendar</h1>
@@ -93,7 +93,7 @@ function Page() {
                 <button className="bg-teal-300 text-gray-500 rounded px-1 py-1 text-sm">
                   Accepted
                 </button>
-                <button className="  text-blue-400 rounded px-1 py-1 text-sm">
+                <button className="  text-blue-500 rounded px-1 py-1 text-sm">
                   Deny
                 </button>
               </div>
@@ -101,11 +101,11 @@ function Page() {
           )}
         </div>
       </div>
-      <div className="w-full ">
+      <div className="w-full">
         <div className="px-2 py-1 sm:py-8">
           <h1 className="text-lg font-bold sm:text-2xl">
             Find Your Dream Job,{" "}
-            <span className="text-blue-800 font-bold">Albert!</span>
+            <span className="text-blue-500 font-bold">Albert!</span>
           </h1>
           <p className="text-gray-500">
             Explore the latest job openings and apply for the best opportunities
@@ -129,7 +129,7 @@ function Page() {
               <option value="banana">Backend</option>
               <option value="orange">Graphic Designer</option>
             </select>
-            <button className="relative bg-blue-800 px-3 py-1 text-white rounded flex items-center gap-2">
+            <button className="relative bg-blue-500 px-3 py-1 text-white rounded flex items-center gap-2">
               <MagnifyingGlassIcon
                 className="w-5 h-5 text-white "
                 strokeWidth={2.5}
@@ -138,7 +138,7 @@ function Page() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-1 py-2 sm:flex-row sm:items-center sm:py-8">
+        <div className="flex flex-col gap-1 py-4 sm:flex-row sm:items-center sm:py-8">
           <h1 className="px-2">Similar:</h1>
           <div className="flex justify-center gap-2 px-2">
             <button className="border border-blue-500 px-2 py-2 text-sm rounded lg:px-6">
@@ -152,12 +152,33 @@ function Page() {
             </button>
           </div>
         </div>
-        <div>
+        {/* {*Featured Cards*} */}
+        <div className="mt-4 sm:mt-0">
           <div className="px-2 py-2 gap-5">
-            <h1 className=" text-md sm:text-2xl">
+            <h1 className=" text-lg sm:text-2xl">
               Featured Jobs{" "}
-              <span className="ml-2 text-blue-600 text-sm sm:text-lg underline underline-offset-4">
+              <span className="ml-2 text-blue-500 text-sm sm:text-lg underline underline-offset-4">
                 See Featured Jobs
+              </span>
+            </h1>
+          </div>
+          <div className="p-2">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+              <MyCard />
+              <MyCard />
+              <MyCard />
+              <MyCard />
+              <MyCard />
+            </div>
+          </div>
+        </div>
+        {/* {*Recommended Cards*} */}
+        <div className=" mt-5">
+          <div className="px-2 py-2 gap-5">
+            <h1 className="text-lg sm:text-2xl">
+              Recommended Jobs{" "}
+              <span className="ml-2 text-blue-500 text-sm sm:text-lg underline underline-offset-4">
+                See Recommended Jobs
               </span>
             </h1>
           </div>

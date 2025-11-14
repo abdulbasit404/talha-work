@@ -4,12 +4,11 @@ config.autoAddCss = false;
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter, Roboto } from "next/font/google";
+import Navbar from "./Navbar/Page";
 
-import { Inter, Roboto } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'], weight: ['400', '700'] });
-const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] });
-
+const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.className}`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
