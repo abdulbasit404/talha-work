@@ -1,17 +1,36 @@
 "use client";
 import React, { useState } from "react";
-import MyCard from "../Components/Cards/Page";
+import MyCard from "../Components/cards/page";
 import Image from "next/image";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-function Page() {
+function page() {
+  const featuredJobs = [
+    {
+      promoHead: "Promoted",
+      mainHead: "UI|UX Designer Teams",
+      location: "Seattle, USA (Remote)",
+      day: "1day ago",
+      applicants: "22 applicants",
+      image: "/cardimage.png",
+    },
+  ];
+  const recommendedJobs = [
+    {
+      mainHead: "UI|UX Designer Teams",
+      location: "Seattle, USA (Remote)",
+      day: "1day ago",
+      applicants: "22 applicants",
+      image: "/cardimage.png",
+    },
+  ];
   const [interviews, setInterviews] = useState(true);
   return (
     <div className="min-h-screen bg-gray-100 lg:flex sm:px-5 sm:py-3 sm:gap-1 ">
       <div className="p-2 flex flex-col gap-2 lg:w-130">
-        <div className="bg-white h-75 lg:h-120 rounded-md relative overflow-hidden ">
+        <div className="bg-white h-75 lg:h-150 rounded-md relative overflow-hidden ">
           <div className=" absolute w-full h-32 rounded-md">
             <Image
               src="/profileimagecover.png"
@@ -72,33 +91,38 @@ function Page() {
               )}
             </div>
           </div>
-          {interviews && (
-            <div className="flex justify-between items-center gap-5 px-5 py-2 sm:justify-around bg-gray-100 rounded-md mx-2">
-              <div>
-                <Image
-                  src="/figmaimage.png"
-                  alt="figmaimage"
-                  height={30}
-                  width={30}
-                />
+
+          <div className="flex flex-col gap-5">
+            {interviews && (
+              <div className="flex justify-between items-center px-5 py-2 bg-gray-100 rounded-md mx-2">
+                <div className="flex justify-center items-center gap-5 lg:gap-3">
+                  <Image
+                    src="/figmaimage.png"
+                    alt="figmaimage"
+                    height={30}
+                    width={30}
+                  />
+
+                  <div className="">
+                    <h1 className="font-bold md:text-sm">UI | UX Designer</h1>
+                    <h1 className="text-sm text-gray-400">Figma</h1>
+                    <h1 className="text-sm text-gray-400 md:text-sm">
+                      16th Sept | 13:45 | Remote
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1 md:flex-row md:gap-3 ">
+                  <button className="bg-teal-300 text-gray-500 rounded px-1 py-1 text-sm">
+                    Accepted
+                  </button>
+                  <button className="  text-blue-500 rounded px-1 py-1 text-sm">
+                    Deny
+                  </button>
+                </div>
               </div>
-              <div className="">
-                <h1 className="font-bold md:text-sm">UI | UX Designer</h1>
-                <h1 className="text-sm text-gray-400">Figma</h1>
-                <h1 className="text-sm text-gray-400 md:text-sm">
-                  16th Sept | 13:45 | Remote
-                </h1>
-              </div>
-              <div className="flex flex-col gap-1 md:flex-row md:gap-3 ">
-                <button className="bg-teal-300 text-gray-500 rounded px-1 py-1 text-sm">
-                  Accepted
-                </button>
-                <button className="  text-blue-500 rounded px-1 py-1 text-sm">
-                  Deny
-                </button>
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <div className="w-full">
@@ -116,7 +140,7 @@ function Page() {
           <div>
             <h1 className="">Job Title, Company, or Keywords</h1>
           </div>
-          <div className="flex flex-col justify-center items-center gap-4 sm:flex-row lg:gap-10">
+          <div className="flex flex-col justify-center items-center gap-4 sm:flex-row lg:gap-5">
             <select className="w-35">
               <option value="">Select Location</option>
               <option value="banana">Saudi Arab</option>
@@ -164,11 +188,17 @@ function Page() {
           </div>
           <div className="p-2">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-              <MyCard />
-              <MyCard />
-              <MyCard />
-              <MyCard />
-              <MyCard />
+              {featuredJobs.map((items, index) => (
+                <MyCard
+                  key={index}
+                  titlePromo={items.promoHead}
+                  titleHeading={items.mainHead}
+                  titleLocation={items.location}
+                  titleDay={items.day}
+                  titleApplicants={items.applicants}
+                  titleImage={items.image}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -184,11 +214,17 @@ function Page() {
           </div>
           <div className="p-2">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
-              <MyCard />
-              <MyCard />
-              <MyCard />
-              <MyCard />
-              <MyCard />
+              {recommendedJobs.map((items, index) => (
+                <MyCard
+                  key={index}
+                  titlePromo={(items.promoHead)}
+                  titleHeading={items.mainHead}
+                  titleLocation={items.location}
+                  titleDay={items.day}
+                  titleApplicants={items.applicants}
+                  titleImage={items.image}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -197,4 +233,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default page;

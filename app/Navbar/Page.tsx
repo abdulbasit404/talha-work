@@ -7,7 +7,7 @@ import { faBars, faXmark, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
-function Page() {
+function page() {
   const pathName = usePathname();
   const links = [
     {
@@ -23,8 +23,8 @@ function Page() {
       label: "Job Tracker",
     },
     {
-      href: "/my-calender",
-      label: "My Calender",
+      href: "/my-calendar",
+      label: "My Calendar",
     },
     {
       href: "/documents",
@@ -139,4 +139,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default page;

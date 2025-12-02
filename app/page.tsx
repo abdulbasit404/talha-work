@@ -1,11 +1,11 @@
-import FindJobs from "./Find_Jobs/Page";
-import TopCompanies from "./Top_Companies/Page";
+import FindJobs from "./find-jobs/page";
+import Loader from "./loader/page"
 
 export default function Home() {
   return (
     <div>
       <FindJobs />
-      <TopCompanies />
+      {/* <Loader/> */}
     </div>
   );
 }
