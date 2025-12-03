@@ -10,13 +10,6 @@ function page({
   titleLocation,
   titleApplicants,
   titleImage,
-}: {
-  titlePromo: string;
-  titleHeading: string;
-  titleDay: string;
-  titleLocation: string;
-  titleApplicants: number; // ✔ SAHI
-  titleImage: string;
 }) {
   return (
     <div
